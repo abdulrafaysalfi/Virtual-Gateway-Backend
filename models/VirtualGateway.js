@@ -13,6 +13,10 @@ const VirtualGatewaySchema = mongoose.Schema({
     type: String,
     required: false,
   },
+  createdOn: {
+    type: Date,
+    default: Date.now,
+  },
 });
 
 module.exports = mongoose.model("virtual-gateways", VirtualGatewaySchema);

@@ -7,6 +7,9 @@ const dotenv = require("dotenv");
 const app = express();
 const UserRoute = require("./routes/UserRoute");
 const VirtualGatewayRoute = require("./routes/VirtualGatewayRoute");
+const MotionSensorRoute = require("./routes/MotionSensorRoute");
+const TempratureHumiditySensorRoute = require("./routes/TempratureHumidityRoute");
+const LightSensorRoute = require("./routes/LightSensorRoute");
 dotenv.config();
 
 //MIDDLEWARES
@@ -14,6 +17,9 @@ app.use(cors());
 app.use(bodyParser.json());
 app.use("/api/user", UserRoute);
 app.use("/api/virtualgateway", VirtualGatewayRoute);
+app.use("/api/motionsensor", MotionSensorRoute);
+app.use("/api/temphumidsensor", TempratureHumiditySensorRoute);
+app.use("/api/lightsensor", LightSensorRoute);
 
 //Database Connection
 mongoose.connect(
