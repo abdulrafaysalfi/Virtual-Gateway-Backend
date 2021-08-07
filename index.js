@@ -10,6 +10,8 @@ const VirtualGatewayRoute = require("./routes/VirtualGatewayRoute");
 const MotionSensorRoute = require("./routes/MotionSensorRoute");
 const TempratureHumiditySensorRoute = require("./routes/TempratureHumidityRoute");
 const LightSensorRoute = require("./routes/LightSensorRoute");
+const BuzzerRoute = require("./routes/BuzzerRoute");
+const LDRRoute = require("./routes/LDRRoute");
 dotenv.config();
 
 //MIDDLEWARES
@@ -20,6 +22,8 @@ app.use("/api/virtualgateway", VirtualGatewayRoute);
 app.use("/api/motionsensor", MotionSensorRoute);
 app.use("/api/temphumidsensor", TempratureHumiditySensorRoute);
 app.use("/api/lightsensor", LightSensorRoute);
+app.use("/api/buzzer", BuzzerRoute);
+app.use("/api/ldr", LDRRoute);
 
 //Database Connection
 mongoose.connect(
