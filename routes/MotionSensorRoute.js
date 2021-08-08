@@ -41,7 +41,7 @@ router.put("/:id", (req, res) => {
     },
     (err, data) => {
       if (err) console.log(err);
-      else res.status(200).send(data.n + ` record Updated`);
+      else res.status(200).send(data);
     }
   );
 });
